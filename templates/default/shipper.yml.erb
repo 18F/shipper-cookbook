@@ -1,0 +1,18 @@
+---
+git_url: <%= @repo %>
+environment: <%= @environment %>
+app_path: <%= @app_path %>
+server_id: <%= @server_id %>
+interval: 1
+before_symlink:
+<% @before_symlink.each do |step| %>
+- <%= step %>
+<% end %>
+after_symlink:
+<% @after_symlink.each do |step| %>
+- <%= step %>
+<% end %>
+shared_files:
+<% @shared_files.each do |from, to| %>
+  <%= from %>: "<%= to %>"
+<% end %>

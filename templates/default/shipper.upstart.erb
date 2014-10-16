@@ -1,0 +1,15 @@
+description "Start shipper"
+
+start on startup
+stop on shutdown
+
+respawn
+respawn limit 10 5
+
+script
+su <%= @app_user %> -c "/bin/bash <<EOT
+export GH_KEY=\"<%= @github_key %>\"
+<%= shipper_paht %>/shipper run -c <%= @config_path %> >> <%= app_path%>/shipper.log 2>&1
+
+EOT"
+end script
