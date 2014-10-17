@@ -4,6 +4,7 @@ action :create do
 
     template config_path do
       source 'shipper.yml.erb'
+      cookbook 'shipper'
       variables(
         repo: new_resource.repository,
         environment: new_resource.environment,
@@ -17,6 +18,7 @@ action :create do
 
     template "/etc/init/#{service_name}.conf" do
       source "shipper.upstart.erb"
+      cookbook 'shipper'
       variables(
         github_key: new_resource.github_key,
         config_path: config_path,
