@@ -17,3 +17,7 @@ def initialize(*args)
   super
   @action = :create
 end
+
+def yml_path
+  return "#{self.shipper_path}/#{self.project}.yml"
+end
