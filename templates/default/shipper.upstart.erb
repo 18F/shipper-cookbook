@@ -8,7 +8,7 @@ respawn limit 10 5
 
 setuid <%= @app_user %>
 
-env GH_KEY=\"<%= @github_key %>\"
+env GH_KEY="<%= @github_key %>"
 
 exec \
 <%= @shipper_path %>/shipper run -c <%= @config_path %> >> <%= @app_path %>/shipper.log 2>&1
