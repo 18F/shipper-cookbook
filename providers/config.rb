@@ -14,7 +14,9 @@ action :create do
         server_id: new_resource.server_id || Digest::SHA1.hexdigest(node['ipaddress']),
         before_symlink: new_resource.before_symlink,
         after_symlink: new_resource.after_symlink,
-        shared_files: new_resource.shared_files
+        shared_files: new_resource.shared_files,
+        interval: new_resource.interval,
+        keep_releases: new_resource.keep_releases
       )
     end
 

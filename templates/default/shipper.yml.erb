@@ -3,7 +3,8 @@ git_url: <%= @repo %>
 environment: <%= @environment %>
 app_path: <%= @app_path %>
 server_id: <%= @server_id %>
-interval: 1
+interval: <%= @interval %>
+keep_releases: <%= @keep_releases %>
 before_symlink:
 <% @before_symlink.each do |step| %>
 - <%= step %>
