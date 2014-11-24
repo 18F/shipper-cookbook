@@ -4,7 +4,7 @@ environment: <%= @environment %>
 app_path: <%= @app_path %>
 server_id: <%= @server_id %>
 interval: <%= @interval %>
-keep_releases: <%= @keep_releases %>
+keep_revisions: <%= @keep_revisions %>
 before_symlink:
 <% @before_symlink.each do |step| %>
 - <%= step %>

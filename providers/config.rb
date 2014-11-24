@@ -16,7 +16,7 @@ action :create do
         after_symlink: new_resource.after_symlink,
         shared_files: new_resource.shared_files,
         interval: new_resource.interval,
-        keep_releases: new_resource.keep_releases
+        keep_revisions: new_resource.keep_revisions
       )
     end
 
